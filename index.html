@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界上最好玩的服务器[bushi]-BestGoodServerMC</title>
+    
+    <!-- 网站图标设置 -->
+    <link rel="icon" type="image/x-icon" href="https://frp-jar.com:23746/pictures/服务器 图标old.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://frp-jar.com:23746/pictures/服务器 图标old.png">
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #ff7b54;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --audio-color: #ff6bcb;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            min-height: 100vh;
+            position: relative;
+            padding: 20px;
+            /* 修改1：背景改为纯黑色，移除背景图片 */
+            background: #000000;
+        }
+        
+        /* 布局样式 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        /* 标题样式 */
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .page-title p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .special-thanks:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(90deg, #FF3333 0%, #FF3333 50%, #3399FF 50%, #3399FF 100%);
+        }
+        
+        /* 按钮样式 */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a5be0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: var(--dark-color);
+        }
+        
+        .btn-warning:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 音效按钮样式 - 保留但不再使用 */
+        .sound-btn {
+            background: linear-gradient(135deg, #9d4edd, #c77dff);
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+            cursor: pointer;
+            border: none;
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .sound-btn:hover {
+            background: linear-gradient(135deg, #c77dff, #9d4edd);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(157, 78, 221, 0.4);
+        }
+        
+        .sound-btn::before {
+            content: "♪ ";
+            margin-right: 5px;
+            font-size: 1.2em;
+        }
+        
+        /* 信息卡片 */
+        .info-card {
+            background: var(--light-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        /* 固定位置元素 */
+        .fixed-info {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        
+        .fixed-info:hover {
+            background: rgba(0, 0, 0, 0.95);
+        }
+        
+        .email-info {
+            left: 20px;
+            bottom: 20px;
+        }
+        
+        .bilibili-button {
+            right: 20px;
+            bottom: 20px;
+            background-color: #FB7299;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        
+        .bilibili-button:hover {
+            background-color: #ff5c8d;
+            transform: translateY(-2px);
+        }
+        
+        .bilibili-icon {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .bilibili-icon:before,
+        .bilibili-icon:after {
+            content: "";
+            position: absolute;
+            background-color: #FB7299;
+        }
+        
+        .bilibili-icon:before {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        
+        .bilibili-icon:after {
+            width: 6px;
+            height: 4px;
+            border-radius: 2px;
+            top: 9px;
+            left: 7px;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer a:hover {
+            color: var(--warning-color);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .page-title p {
+                font-size: 1rem;
+            }
+            
+            .special-thanks {
+                font-size: 1rem;
+                padding: 14px 20px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .fixed-info {
+                position: static;
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .email-info, .bilibili-button {
+                position: static;
+                display: block;
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题 -->
+        <header class="page-title">
+            <h1>欢迎来到BestGoodServerMC服务器</h1>
+            <p>Minecraft 1.20.1 模组服务器</p>
+        </header>
+        
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <div class="info-card">
+                <h2>服务器信息</h2>
+                <p>本服务器是 Minecraft 1.20.1 模组服务器，提供丰富的游戏体验和友好的社区环境</p>
+            </div>
+            
+            <div class="info-card">
+                <h2>加入我们</h2>
+                <p>复制群号 <strong>970547713</strong> 或点击下方按钮自动跳转加入我们的QQ群</p>
+                <p>你也可以加入友服QQ群（qiamao的1.12.2模组服务器）</p>
+            </div>
+            
+            <!-- 按钮组 -->
+            <div class="btn-group">
+                <a href="https://qm.qq.com/q/4GlvhXDDtm" class="btn btn-primary" target="_blank">服务器QQ群</a>
+                <a href="https://qm.qq.com/q/4GlvhXDDtm" class="btn btn-warning" target="_blank">友服QQ群</a>
+                <!-- 修改2：删除了"神秘小游戏"按钮 -->
+                <!-- 修改3：删除了"Ciallo"音效按钮 -->
+            </div>
+            
+
+        
+
+    
+    <!-- 修改4：更新邮箱地址为 email@bestgoodservermc.top -->
+    <div class="fixed-info email-info">服务器反馈邮箱：<a href="mailto:email@bestgoodservermc.top">email@bestgoodservermc.top</a></div>
+
+    
+    <!-- 修改5：删除了音频元素和对应的JavaScript代码 -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"047f5517b5ed404a80da7630c7bdcc0d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
